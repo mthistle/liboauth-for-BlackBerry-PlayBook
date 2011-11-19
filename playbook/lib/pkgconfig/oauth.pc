@@ -1,0 +1,12 @@
+prefix=/Users/mthistle/Downloads/liboauth-0.9.4/playbook
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: oauth
+Description: OAuth - server to server secure API authentication  
+Requires.private:  libcurl libcrypto
+Version: 0.9.4
+Libs: -L${libdir} -loauth
+Libs.private: -lm  -Wl,-s -Wl,-Bsymbolic -Wl,--gc-sections -lcrypto
+Cflags: -I${includedir} 
